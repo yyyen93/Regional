@@ -1,0 +1,120 @@
+
+// For dropdown menus
+// Fade in
+@keyframes fadeIn{
+    // start
+    0%{
+        display:none;
+        opacity: 0;
+    }
+
+    1%{
+        // this right here give flexibility, you cannot straight from 0% to 100%, you need a slow change.
+        display:block;
+        opacity:0;
+    }
+
+    // end
+    100%{
+        display:block;
+        opacity:1;
+    }
+}
+
+
+// Another population animation for menu
+@keyframes fadeInUp{
+    0%{
+        display:none;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    1%{
+        display:block;
+        opacity:0;
+    }
+    
+    100%{
+        display:block;
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.animation-float{
+    animation: float 3s ease-in-out infinite;
+}
+
+// loop from 1 - 10 for different floating option
+@for $i from 1 through 10{
+    .animation-float-#{$i}{
+        animation: float #{$i}s ease-in-out infinite;
+    }
+}
+
+@keyframes float{
+    // start
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+
+    1%{
+        transform: translate3d(0, 7px, 0);
+    }
+
+    // end
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+// Car animation
+@keyframes car{
+    0%{
+        display:none;
+        // opacity:0;
+        transform: translateX(100%);
+    }
+
+    1%{
+        display:block;
+        // opacity:0;
+        transform: translateX(100%);
+    }
+
+    100%{
+        display:block;
+        // opacity:1;
+        transform: translateX(0%);
+
+    }
+
+}   
+
+
+
+
+/* loop from 1 - 20 for different marquee timing option */
+@for $i from 1 through 20 {
+	.animation-marquee-#{$i}0 {
+		animation: marquee #{$i}0s linear infinite;
+	}
+}
+
+
+// Marquee animation
+@keyframes marquee{
+    from{
+        transform: translate3d(0,0,0);
+    }
+
+    to{
+        transform: translate3d(-100%,0,0);
+    }
+}
